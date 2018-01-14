@@ -1,10 +1,8 @@
 module.exports = {
     'connection': {
-        'host': '',
-        'user': '',
+        'host': 'localhost',
+        'user': 'root',
         'password': '',
-        'database': '',
-    },
-    'database': '',
-    'users_table': ''
+        'database': 'mean-starter',
+    }
 };

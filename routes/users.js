@@ -8,21 +8,14 @@ connection.query('USE ' + dbconfig.database);
 
 const UserModal = require('../modals/users');
 
-// =====================================
-// User Management =====================
-// =====================================
-router.get('/', function(req, res, next) {
-    // res.render('users.pug', { title: 'User Management', user : req.user} );
-});
-
-router.get('/getAllUsers', function(req, res, next) {
-    UserModal.getAllUsers((err, result) => {
+router.get('/getUsers', function(req, res, next) {
+    UserModal.getUsers((err, result) => {
         res.json(result);
     });
 });
 
-router.get('/getAllControleurs', function(req, res, next) {
-    UserModal.getAllControleurs((err, result) => {
+router.get('/getUserById/:id', function(req, res, next) {
+    UserModal.getUserById(req.params.id, (err, result) => {
         res.json(result);
     });
 });
